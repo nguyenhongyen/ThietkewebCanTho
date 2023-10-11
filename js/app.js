@@ -84,17 +84,7 @@
 			});
 		});
 	});
-	const handleHeaderSlider = function () {
-		if ($('#swiper-image').length) {
-			new Swiper('#swiper-image .swiper', {
-				spaceBetween: 10,
-				centeredSlides: true,
-				autoplay: {
-					delay: 2500,
-				},
-			});
-		}
-	}
+
 	const handleHeaderSliderTwo = function () {
 		if ($('#swiper-image-two').length) {
 			new Swiper('#swiper-image-two .swiper', {
@@ -106,7 +96,18 @@
 			});
 		}
 	}
+	const handleSliderProcedure = function () {
+		if ($('#section-procedure-2').length) {
+			new Swiper('.section-procedure__swiper-thumb .swiper', {
+				spaceBetween: 10,
+				centeredSlides: true,
 
+			});
+		}
+	}
+
+
+	///====================update ====================
 	const handleTabpriceList = function (){
 		let itemTab = $("#price-list-tab .nav-item");
 		itemTab.on("click",function(){
@@ -123,10 +124,7 @@
 
 
 	$(function () {
-
 		handleTabpriceList();
-
-
 	});
 
 })();
