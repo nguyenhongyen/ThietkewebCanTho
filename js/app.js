@@ -108,6 +108,7 @@
 
 
 	///====================update ====================
+
 	const handleTabpriceList = function (){
 		let itemTab = $("#price-list-tab .nav-item");
 		itemTab.on("click",function(){
@@ -122,9 +123,27 @@
 		});
 	}
 
+	$(".heading-animation span").removeClass("active").hide();
+	$(".heading-animation span:first-child").addClass("active").show();
+	const handleAnimationText = function(){
+		if($(".heading-animation span").length){
+			$(".heading-animation span").each(function (number) {
+				let self = $(this);
+				let count = number;
+				setTimeout(function () {
+					$(".heading-animation span").removeClass("active").hide();
+					$(self).addClass("active").show();
+				}, 2500 * count);
+			});
+		}
+	}
+
 
 	$(function () {
 		handleTabpriceList();
+		$(document).ready(function () {
+			setInterval(function(){handleAnimationText()}, 2500);
+		});
 	});
 
 })();
