@@ -1,67 +1,4 @@
 (() => {
-
-	const handleSwiperTablePrice = function () {
-		if ($('.table-price .swiper').length) {
-			let listSliderTable = $('.table-price .swiper');
-			listSliderTable.each((index, sliderItem) => {
-				let sliderItemID = '#' + $(sliderItem).closest('.tab-pane').attr('id');
-				new Swiper(sliderItemID + ' .swiper', {
-					slidesPerView: 1,
-					centeredSlides: true,
-					spaceBetween: 20,
-					autoplay: {
-						delay: 1500,
-					},
-					pagination: {
-						el: sliderItemID + " .swiper-pagination",
-						clickable: true,
-					},
-
-					breakpoints: {
-						576: {
-							slidesPerView: 1
-						},
-						768: {
-							slidesPerView: 1.5
-						},
-						992: {
-							slidesPerView: 2
-						},
-						1024: {
-							slidesPerView: 2,
-						},
-						1440: {
-							slidesPerView: 3,
-						},
-
-					}
-				});
-			});
-		}
-	}
-
-	const itemCollapseCourse = $('#accordion-question .accordion-button[aria-expanded]');
-	itemCollapseCourse.on('click', function () {
-		if ($(this).hasClass('show')) return false;
-		$('#accordion-question .accordion-collapse.show').each((_, element) => {
-			new bootstrap.Collapse(element, {
-				show: false,
-			});
-		});
-	});
-
-
-	const handleSliderProcedure = function () {
-		if ($('#section-procedure-2').length) {
-			new Swiper('.section-procedure__swiper-thumb .swiper', {
-				spaceBetween: 10,
-				centeredSlides: true,
-
-			});
-		}
-	}
-
-
 	///====================update ====================
 
 	const handleTabpriceList = function (){
@@ -194,6 +131,41 @@
 		}
 	}
 
+	const handleSwiperPriceList = function () {
+		if ($('#section-price-list .swiper').length) {
+			let listSliderTable = $('#section-price-list .swiper');
+			listSliderTable.each((index, sliderItem) => {
+				let sliderItemID = '#' + $(sliderItem).closest('.tab-pane').attr('id');
+				new Swiper(sliderItemID + ' .swiper', {
+					slidesPerView: 1.2,
+					spaceBetween: 20,
+					speed:1000,
+					autoplay: {
+						delay: 2500,
+					},
+					breakpoints: {
+						576: {
+							slidesPerView: 1.3
+						},
+						768: {
+							slidesPerView: 2
+						},
+						992: {
+							slidesPerView: 2
+						},
+						1024: {
+							slidesPerView: 2,
+						},
+						1440: {
+							slidesPerView: 3,
+						},
+
+					}
+				});
+			});
+		}
+	}
+
 	$(function () {
 		handleTabpriceList();
 		$(document).ready(function () {
@@ -202,6 +174,7 @@
 		handleHeaderSliderBlogs();
 		handleSectionHtmlBlogs();
 		handleHeaderSliderIntroduce();
+		handleSwiperPriceList();
 	});
 
 })();

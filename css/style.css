@@ -83,7 +83,7 @@ textarea:focus {
     background-repeat: no-repeat;
 }
 
-.section-page {
+.section-gap {
     padding: 50px 0;
 }
 
@@ -101,16 +101,10 @@ textarea:focus {
     .main {
         padding-top: 255px;
     }
-}
-
-/*
-@media (min-width: 1440px) {
-     main .container{
-        margin:0 auto;
-        max-width: 1296px;
+    .section-gap {
+        padding: 30px 0;
     }
 }
-*/
 
 /*================================
             custom-button
@@ -171,6 +165,23 @@ textarea:focus {
     font-size: 32px;
     font-weight: 700;
     color: #202124;
+}
+@media(max-width: 1024px) {
+    .section-heading .heading {
+        font-size: 30px !important;
+    }
+    .section-heading .title-heading {
+        font-size: 28px !important;
+    }
+}
+
+@media(max-width: 576px) {
+    .section-heading .heading {
+        font-size: 26px !important;
+    }
+    .section-heading .title-heading {
+        font-size: 22px !important;
+    }
 }
 
 /*================================
@@ -291,6 +302,20 @@ textarea:focus {
 
     .section-introduce__left {
         order: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(max-width: 576px){
+    .section-introduce__left {
+       gap: unset;
+    }
+    .section-intro__title{
+        margin-top: 0;
     }
 }
 
@@ -730,11 +755,37 @@ textarea:focus {
     font-size: 15px;
     color: #202124;
 }
-
+.section-price-list .swiper-mobile{
+    display: none;
+}
 @media (max-width: 1024px) {
     .table-price__gird {
         grid-template-columns: 325px 325px 325px;
     }
+}
+@media(max-width: 991px) {
+    .table-price__gird{
+        display: none;
+    }
+    .section-price-list .swiper-mobile{
+        display: flex;
+    }
+    .table-price__item:nth-child(odd) {
+        transform: unset;
+    }
+
+    .table-price__item {
+        overflow: hidden;
+        background-color: var(--bs-white);
+        z-index: 1;
+        box-shadow: 0px 10px 32px -4px rgba(24, 39, 75, 0.10), 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+    }
+    .section-price-list .swiper-slide:nth-child(odd) {
+        transform: translateY(50px);
+        border-radius:10px;
+
+    }
+
 }
 
 /*================================
@@ -794,6 +845,9 @@ textarea:focus {
 @media (max-width: 991px) {
     .introduce-gird {
         grid-template-columns: 300px 300px;
+    }
+    .section-introduce {
+        padding: 50px 0;
     }
 }
 
