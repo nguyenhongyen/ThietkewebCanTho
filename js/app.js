@@ -1,18 +1,5 @@
 (() => {
-	const initTyping = () => {
-		let typed = $('#typed');
-		if (typed.length === 0) return false;
 
-		new Typed('#typed', {
-			stringsElement: '#type-string ',
-			typeSpeed: 50,
-			backSpeed: 0,
-			backDelay: 600,
-			startDelay: 0,
-			loop: true,
-		});
-
-	}
 	const handleSwiperTablePrice = function () {
 		if ($('.table-price .swiper').length) {
 			let listSliderTable = $('.table-price .swiper');
@@ -52,29 +39,7 @@
 			});
 		}
 	}
-	const handleSectionService = function () {
-		if ($('#section-service').length) {
-			let elmDescription = $('#section-service');
 
-			let scrollHeight = elmDescription.find('.content').get(0).scrollHeight;
-
-			elmDescription.css('--height', scrollHeight + 'px');
-
-			if (scrollHeight <= elmDescription.innerHeight() + 4) {
-				$('#expand-button').remove();
-			} else {
-				$('#expand-button').click(function () {
-					if (elmDescription.hasClass('is-show')) {
-						elmDescription.removeClass('is-show');
-						$(this).html('Xem thêm <i class="fal fa-angle-down"></i>');
-					} else {
-						elmDescription.addClass('is-show');
-						$(this).html('Thu gọn <i class="fal fa-angle-up"></i>');
-					}
-				});
-			}
-		}
-	}
 	const itemCollapseCourse = $('#accordion-question .accordion-button[aria-expanded]');
 	itemCollapseCourse.on('click', function () {
 		if ($(this).hasClass('show')) return false;
@@ -85,17 +50,7 @@
 		});
 	});
 
-	const handleHeaderSliderTwo = function () {
-		if ($('#swiper-image-two').length) {
-			new Swiper('#swiper-image-two .swiper', {
-				spaceBetween: 10,
-				centeredSlides: true,
-				autoplay: {
-					delay: 3500,
-				},
-			});
-		}
-	}
+
 	const handleSliderProcedure = function () {
 		if ($('#section-procedure-2').length) {
 			new Swiper('.section-procedure__swiper-thumb .swiper', {
@@ -123,27 +78,130 @@
 		});
 	}
 
-	$(".heading-animation span").removeClass("active").hide();
-	$(".heading-animation span:first-child").addClass("active").show();
+	$(".heading-animation .animation-text").removeClass("active").hide();
+	$(".heading-animation .animation-text:first-child").addClass("active").show();
 	const handleAnimationText = function(){
-		if($(".heading-animation span").length){
-			$(".heading-animation span").each(function (number) {
+		if($(".heading-animation .animation-text").length){
+			$(".heading-animation .animation-text").each(function (number) {
 				let self = $(this);
 				let count = number;
 				setTimeout(function () {
-					$(".heading-animation span").removeClass("active").hide();
+					$(".heading-animation .animation-text").removeClass("active").hide();
 					$(self).addClass("active").show();
 				}, 2500 * count);
 			});
 		}
 	}
 
+	const handleHeaderSliderBlogs = function () {
+		if ($('#section-blogs .swiper').length) {
+			new Swiper('#section-blogs .swiper', {
+				spaceBetween: 15,
+				slidesPerView: 1.2,
+				speed:1000,
+				autoplay: {
+					delay: 3500,
+					disableOnInteraction: true,
+				},
+				navigation: {
+					nextEl: "#section-blogs .button-next",
+					prevEl: "#section-blogs .button-prev",
+				},
+				breakpoints: {
+					425: {
+						slidesPerView: 1.6
+					},
+					768: {
+						slidesPerView: 2.3
+					},
+					992: {
+						slidesPerView: 2.5
+					},
+					1024: {
+						slidesPerView: 2.6,
+					},
+					1440: {
+						slidesPerView: 3,
+					},
+
+				}
+			});
+		}
+	}
+
+	const handleSectionHtmlBlogs = function () {
+		if ($('#section-html-blogs').length) {
+			let elmDescription = $('#section-html-blogs');
+			let scrollHeight = elmDescription.find('.content').get(0).scrollHeight;
+
+			$('#section-html-blogs').css('--height', '400' + 'px');
+
+			if (scrollHeight <= elmDescription.innerHeight()) {
+				$('#expand-button').remove();
+				$('#section-html-blogs').css('--height', 'auto');
+			} else {
+				$('#expand-button').click(function () {
+					if (elmDescription.hasClass('is-show')) {
+						elmDescription.removeClass('is-show');
+						$(this).html('<span>Xem thêm</span><span><i class="fal fa-angle-down"></i></span>');
+						$('#section-html-blogs').css('--height', '400' + 'px');
+					} else {
+						elmDescription.addClass('is-show');
+						$(this).html('<span>Thu gọn </span><span><i class="fal fa-angle-up"></i></span>');
+						$('#section-html-blogs').css('--height',  'auto');
+					}
+				});
+			}
+		}
+	}
+
+	const handleHeaderSliderIntroduce = function () {
+		if ($('#section-introduce-6 .swiper').length) {
+			new Swiper('#section-introduce-6 .swiper', {
+				spaceBetween: 15,
+				slidesPerView: 1.3,
+				speed:1000,
+				autoplay: {
+					delay: 6500,
+					disableOnInteraction: true,
+				},
+				navigation: {
+					nextEl: "#section-introduce-6 .button-next",
+					prevEl: "#section-introduce-6 .button-prev",
+				},
+				breakpoints: {
+					375: {
+						slidesPerView:1.7
+					},
+					425: {
+						slidesPerView:2
+					},
+					768: {
+						slidesPerView: 3.2
+					},
+					992: {
+						slidesPerView: 3
+					},
+					1024: {
+						slidesPerView: 4,
+					},
+					1440: {
+						slidesPerView: 4,
+					},
+
+				}
+			});
+		}
+	}
 
 	$(function () {
 		handleTabpriceList();
 		$(document).ready(function () {
 			setInterval(function(){handleAnimationText()}, 2500);
 		});
+		handleHeaderSliderBlogs();
+		handleSectionHtmlBlogs();
+		handleHeaderSliderIntroduce();
 	});
 
 })();
