@@ -30,6 +30,19 @@
 		}
 	}
 
+	const handleAnimationProdure = function(){
+		if($(".section-procedure .nav-link").length){
+			$(".section-procedure .nav-link").each(function (number) {
+				let self = $(this);
+				let count = number;
+				setTimeout(function () {
+					$(".section-procedure .nav-link").removeClass("active");
+					$(self).addClass("active");
+				}, 4500 * count);
+			});
+		}
+	}
+
 	const handleHeaderSliderBlogs = function () {
 		if ($('#section-blogs .swiper').length) {
 			new Swiper('#section-blogs .swiper', {
@@ -92,7 +105,7 @@
 		}
 	}
 
-	const handleHeaderSliderIntroduce = function () {
+	const handleHeaderSliderIntroduce6 = function () {
 		if ($('#section-introduce-6 .swiper').length) {
 			new Swiper('#section-introduce-6 .swiper', {
 				spaceBetween: 15,
@@ -166,15 +179,175 @@
 		}
 	}
 
+	const handleHeaderSliderIntroduce = function () {
+		if ($('#swiper-introduce .swiper').length) {
+			new Swiper('#swiper-introduce .swiper', {
+				spaceBetween: 15,
+				slidesPerView: 1.2,
+				speed:1000,
+				autoplay: {
+					delay: 6500,
+					disableOnInteraction: true,
+				},
+				navigation: {
+					nextEl: "#swiper-introduce .button-next",
+					prevEl: "#swiper-introduce .button-prev",
+				},
+				breakpoints: {
+					375: {
+						slidesPerView:1.3
+					},
+					425: {
+						slidesPerView:1.5
+					},
+					768: {
+						slidesPerView: 2.5
+					},
+					992: {
+						slidesPerView: 3
+					},
+					1024: {
+						slidesPerView: 3,
+					},
+					1440: {
+						slidesPerView: 3,
+					},
+
+				}
+			});
+		}
+	}
+	const handleHeaderSliderIntroduce3 = function () {
+		if ($('#swiper-introduce-3 .swiper').length) {
+			new Swiper('#swiper-introduce-3 .swiper', {
+				spaceBetween: 15,
+				slidesPerView: 1.1,
+				speed:1000,
+				autoplay: {
+					delay: 6500,
+					disableOnInteraction: true,
+				},
+				navigation: {
+					nextEl: "#swiper-introduce-4 .button-next",
+					prevEl: "#swiper-introduce-4.button-prev",
+				},
+				breakpoints: {
+					375: {
+						slidesPerView:1.2
+					},
+					425: {
+						slidesPerView:1.3
+					},
+					768: {
+						slidesPerView: 1.6
+					},
+					992: {
+						slidesPerView: 3
+					},
+					1024: {
+						slidesPerView: 3,
+					},
+					1440: {
+						slidesPerView: 3,
+					},
+
+				}
+			});
+		}
+	}
+
+	const handleHeaderSliderIntroduce4 = function () {
+		if ($('#swiper-introduce-4 .swiper').length) {
+			new Swiper('#swiper-introduce-4 .swiper', {
+				spaceBetween: 15,
+				slidesPerView: 1.1,
+				speed:1000,
+				autoplay: {
+					delay: 6500,
+					disableOnInteraction: true,
+				},
+				navigation: {
+					nextEl: "#swiper-introduce-4 .button-next",
+					prevEl: "#swiper-introduce-4.button-prev",
+				},
+				breakpoints: {
+					375: {
+						slidesPerView:1.2
+					},
+					425: {
+						slidesPerView:1.3
+					},
+					768: {
+						slidesPerView: 2.5
+					},
+					992: {
+						slidesPerView: 3
+					},
+					1024: {
+						slidesPerView: 3,
+					},
+					1440: {
+						slidesPerView: 3,
+					},
+
+				}
+			});
+		}
+	}
+
+	const handleHeaderSliderIntroduce5 = function () {
+		if ($('#swiper-introduce-5 .swiper').length) {
+			new Swiper('#swiper-introduce-5 .swiper', {
+				spaceBetween: 15,
+				slidesPerView: 1.1,
+				speed:1000,
+				autoplay: {
+					delay: 7500,
+					disableOnInteraction: true,
+				},
+				navigation: {
+					nextEl: "#swiper-introduce-5 .button-next",
+					prevEl: "#swiper-introduce-5 .button-prev",
+				},
+				breakpoints: {
+					375: {
+						slidesPerView:1.2
+					},
+					425: {
+						slidesPerView:1.5
+					},
+					768: {
+						slidesPerView: 2.5
+					},
+					992: {
+						slidesPerView: 3
+					},
+					1024: {
+						slidesPerView: 3,
+					},
+					1440: {
+						slidesPerView: 3,
+					},
+
+				}
+			});
+		}
+	}
+
 	$(function () {
 		handleTabpriceList();
 		$(document).ready(function () {
 			setInterval(function(){handleAnimationText()}, 2500);
 		});
+
 		handleHeaderSliderBlogs();
 		handleSectionHtmlBlogs();
-		handleHeaderSliderIntroduce();
+		handleHeaderSliderIntroduce6();
 		handleSwiperPriceList();
+		handleHeaderSliderIntroduce();
+		handleHeaderSliderIntroduce3();
+		handleHeaderSliderIntroduce4();
+		handleHeaderSliderIntroduce5();
 	});
 
 })();
