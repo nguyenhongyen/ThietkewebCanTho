@@ -17,6 +17,7 @@
 
 	$(".heading-animation .animation-text").removeClass("active").hide();
 	$(".heading-animation .animation-text:first-child").addClass("active").show();
+
 	const handleAnimationText = function(){
 		if($(".heading-animation .animation-text").length){
 			$(".heading-animation .animation-text").each(function (number) {
@@ -30,6 +31,8 @@
 		}
 	}
 
+
+
 	const handleAnimationProdure = function(){
 		if($(".section-procedure .nav-link").length){
 			$(".section-procedure .nav-link").each(function (number) {
@@ -37,7 +40,10 @@
 				//let idTab = self.data("id");
 				let count = number;
 				setTimeout(function () {
+					$('.section-procedure .nav-link.active').removeClass("bg-active");
 					self.trigger('click');
+					$('.section-procedure .nav-link:before').css('display','none');
+					/*self.delay(9000).addClass("bg-active");*/
 					/*$(".section-procedure .nav-link").removeClass("active");
 					$(".section-procedure .tab-pane").removeClass("show active");
 					$(self).addClass("active");
@@ -344,7 +350,7 @@
 		handleTabpriceList();
 		$(document).ready(function () {
 			setInterval(function(){handleAnimationText()}, 3000);
-		    /* handleAnimationProdure()*/
+		     handleAnimationProdure()
 		});
 
 		handleHeaderSliderBlogs();

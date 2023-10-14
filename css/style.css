@@ -1314,37 +1314,6 @@ textarea:focus {
     z-index: 3;
 }
 
-
-/*.section-procedure__button .nav-link > svg{
-    border-radius: 500px;
-    fill: none;
-    left: 0;
-    position: absolute;
-    top: 0px;
-    stroke-dasharray: 1200px;
-}
-.section-procedure__button .nav-link > svg > rect{
-    stroke:var(--secondary-color);
-    stroke-width: 4px;
-    width: 100%;
-    height: 52px;
-    animation: animation-button 5s ease-in-out;
-}*/
-@keyframes animation-button {
-    0% {
-        fill-opacity: 0;
-        stroke-dashoffset:  1200px;
-    }
-    100%{
-        fill-opacity: 1;
-    }
-}
-
-.section-procedure__button .nav-link.active {
-    border-radius: 100px;
-    background-color: var(--secondary-color);
-    color: var(--bs-white);
-}
 @keyframes height-animation {
     0% {
         bottom: -5px;
@@ -1354,14 +1323,46 @@ textarea:focus {
     }
 }
 
+.section-procedure__button .nav-link.active::after{
+    position: absolute;
+    content: '';
+    top: -1px;
+    height:2px;
+    width: 15%;
+    border-radius: 100px;
+    left: 22px;
+    background-color: var(--secondary-color);
+    animation: 5s animation-button ease-in-out;
+}
+
+@keyframes animation-button {
+    0%{
+        width: 5%;
+    }
+    100%{
+       width: 74%;
+    }
+
+}
+.section-procedure__button .nav-link.active {
+    background-color: var(--bs-white);
+    color: #5F6368;
+}
+.bg-active{
+    background-color: var(--secondary-color) !important;
+    color:var(--bs-white) !important;
+    transition: var(--transition-default);
+}
+
+
 .section-procedure__button .nav-link > span > img {
     filter: grayscale(100%);
 }
 
-.section-procedure__button .nav-link.active > span > img {
+/*.section-procedure__button .nav-link.active > span > img {
     filter: brightness(0) invert(1);
-    transition-delay:3s;
-}
+    transition-delay:4.5s;
+}*/
 
 .section-procedure__item {
     display: flex;
@@ -1766,7 +1767,7 @@ textarea:focus {
 }
 
 .accordion-question .accordion-item button {
-    padding: 30px 25px;
+    padding:20px;
     background: var(--bs-white);
     color: #202124;
     font-size: 18px;
@@ -1783,15 +1784,14 @@ textarea:focus {
 }
 
 .accordion-question .accordion-item .accordion-collapse {
-    padding: 0 25px 30px;
     color: rgba(32, 33, 36, 0.75);
     font-size: 16px;
     font-weight: 400;
 }
-
-.accordion-question .accordion-item .accordion-body {
-    padding: 0;
+.accordion-question .accordion-item .accordion-body{
+    padding:0 1.25rem 1.25rem 1.25rem;
 }
+
 
 .accordion-question .accordion-button::after {
     margin-left: unset;
