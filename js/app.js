@@ -1,15 +1,15 @@
 (() => {
 	///====================update ====================
 
-	const handleTabpriceList = function (){
+	const handleTabpriceList = function () {
 		let itemTab = $("#price-list-tab .nav-item");
-		itemTab.on("click",function(){
+		itemTab.on("click", function () {
 			itemTab.removeClass("active");
 
 			$(this).addClass("active");
 			$("#price-list-tab .bg-tab").css({
 				left: parseInt($(this)[0].offsetLeft) + "px",
-				width:parseInt($(this)[0].offsetWidth) + "px",
+				width: parseInt($(this)[0].offsetWidth) + "px",
 
 			});
 		});
@@ -18,8 +18,8 @@
 	$(".heading-animation .animation-text").removeClass("active").hide();
 	$(".heading-animation .animation-text:first-child").addClass("active").show();
 
-	const handleAnimationText = function(){
-		if($(".heading-animation .animation-text").length){
+	const handleAnimationText = function () {
+		if ($(".heading-animation .animation-text").length) {
 			$(".heading-animation .animation-text").each(function (number) {
 				let self = $(this);
 				let count = number;
@@ -32,9 +32,8 @@
 	}
 
 
-
-	const handleAnimationProdure = function(){
-		if($(".section-procedure .nav-link").length){
+	const handleAnimationProdure = function () {
+		if ($(".section-procedure .nav-link").length) {
 			$(".section-procedure .nav-link").each(function (number) {
 				let self = $(this);
 				//let idTab = self.data("id");
@@ -42,7 +41,7 @@
 				setTimeout(function () {
 					$('.section-procedure .nav-link.active').removeClass("bg-active");
 					self.trigger('click');
-					$('.section-procedure .nav-link:before').css('display','none');
+					$('.section-procedure .nav-link:before').css('display', 'none');
 					/*self.delay(9000).addClass("bg-active");*/
 					/*$(".section-procedure .nav-link").removeClass("active");
 					$(".section-procedure .tab-pane").removeClass("show active");
@@ -59,7 +58,7 @@
 			new Swiper('#section-blogs .swiper', {
 				spaceBetween: 15,
 				slidesPerView: 1.2,
-				speed:1000,
+				speed: 1000,
 				autoplay: {
 					delay: 3500,
 					disableOnInteraction: true,
@@ -109,7 +108,7 @@
 					} else {
 						elmDescription.addClass('is-show');
 						$(this).html('<span>Thu gọn </span><span><i class="fal fa-angle-up"></i></span>');
-						$('#section-html-blogs').css('--height',  'auto');
+						$('#section-html-blogs').css('--height', 'auto');
 					}
 				});
 			}
@@ -121,7 +120,7 @@
 			new Swiper('#section-introduce-6 .swiper', {
 				spaceBetween: 15,
 				slidesPerView: 1.3,
-				speed:1000,
+				speed: 1000,
 				autoplay: {
 					delay: 6500,
 					disableOnInteraction: true,
@@ -132,10 +131,10 @@
 				},
 				breakpoints: {
 					375: {
-						slidesPerView:1.7
+						slidesPerView: 1.7
 					},
 					425: {
-						slidesPerView:2
+						slidesPerView: 2
 					},
 					768: {
 						slidesPerView: 3.2
@@ -163,7 +162,7 @@
 				new Swiper(sliderItemID + ' .swiper', {
 					slidesPerView: 1.2,
 					spaceBetween: 20,
-					speed:1000,
+					speed: 1000,
 					autoplay: {
 						delay: 2500,
 					},
@@ -195,7 +194,7 @@
 			new Swiper('#swiper-introduce .swiper', {
 				spaceBetween: 15,
 				slidesPerView: 1.2,
-				speed:1000,
+				speed: 1000,
 				autoplay: {
 					delay: 6500,
 					disableOnInteraction: true,
@@ -206,10 +205,10 @@
 				},
 				breakpoints: {
 					375: {
-						slidesPerView:1.3
+						slidesPerView: 1.3
 					},
 					425: {
-						slidesPerView:1.5
+						slidesPerView: 1.5
 					},
 					768: {
 						slidesPerView: 2.5
@@ -234,7 +233,7 @@
 			new Swiper('#swiper-introduce-3 .swiper', {
 				spaceBetween: 15,
 				slidesPerView: 1.1,
-				speed:1000,
+				speed: 1000,
 				autoplay: {
 					delay: 6500,
 					disableOnInteraction: true,
@@ -245,10 +244,10 @@
 				},
 				breakpoints: {
 					375: {
-						slidesPerView:1.2
+						slidesPerView: 1.2
 					},
 					425: {
-						slidesPerView:1.3
+						slidesPerView: 1.3
 					},
 					768: {
 						slidesPerView: 1.6
@@ -273,7 +272,7 @@
 			new Swiper('#swiper-introduce-4 .swiper', {
 				spaceBetween: 15,
 				slidesPerView: 1.1,
-				speed:1000,
+				speed: 1000,
 				autoplay: {
 					delay: 6500,
 					disableOnInteraction: true,
@@ -284,10 +283,10 @@
 				},
 				breakpoints: {
 					375: {
-						slidesPerView:1.2
+						slidesPerView: 1.2
 					},
 					425: {
-						slidesPerView:1.3
+						slidesPerView: 1.3
 					},
 					768: {
 						slidesPerView: 2.5
@@ -312,7 +311,7 @@
 			new Swiper('#swiper-introduce-5 .swiper', {
 				spaceBetween: 15,
 				slidesPerView: 1.1,
-				speed:1000,
+				speed: 1000,
 				autoplay: {
 					delay: 7500,
 					disableOnInteraction: true,
@@ -323,10 +322,10 @@
 				},
 				breakpoints: {
 					375: {
-						slidesPerView:1.2
+						slidesPerView: 1.2
 					},
 					425: {
-						slidesPerView:1.5
+						slidesPerView: 1.5
 					},
 					768: {
 						slidesPerView: 2.5
@@ -349,8 +348,16 @@
 	$(function () {
 		handleTabpriceList();
 		$(document).ready(function () {
-			setInterval(function(){handleAnimationText()}, 3000);
-		     handleAnimationProdure()
+			setInterval(function () {
+				handleAnimationText()
+			}, 3000);
+
+			$(window).scroll(function (e) {
+				let activeProcedure = $('.section-procedure ').offset().top;
+				if ($(window).scrollTop() > activeProcedure) {
+					handleAnimationProdure()
+				}
+			});
 		});
 
 		handleHeaderSliderBlogs();
